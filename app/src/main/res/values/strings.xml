@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">again</string>
+    <string name="bottom_home">Home</string>
+    <string name="bottom_dashboard">Dashboard</string>
+    <string name="bottom_setting">Notifications</string>
+    <string name="bottom_build">New</string>
+</resources>
