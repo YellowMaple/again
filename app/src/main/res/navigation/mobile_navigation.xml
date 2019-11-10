@@ -9,17 +9,19 @@
         android:id="@+id/navigation_home"
         android:name="com.hfy.bottom.ui.home.HomeFragment"
         android:label="@string/bottom_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.hfy.bottom.ui.dashboard.DashboardFragment"
-        android:label="@string/bottom_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_sportDetailFragment"
+            app:destination="@id/sportDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.hfy.bottom.ui.notifications.NotificationsFragment"
         android:label="@string/bottom_setting"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/sportDetailFragment"
+        android:name="com.hfy.bottom.ui.home.index.detail.SportDetailFragment"
+        android:label="SportDetailFragment" />
 </navigation>

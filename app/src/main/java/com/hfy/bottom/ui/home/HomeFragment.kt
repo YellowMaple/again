@@ -1,5 +1,6 @@
 package com.hfy.bottom.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,12 +54,13 @@ class HomeFragment : Fragment() {
         mBottomBehavior.setInterpolator(BounceInterpolator())
 
 
-        val fragment = BuildFragment()
+        val fragment = IndexFragment()
         addFragment(fragment)
 
         return root
     }
 
+    @SuppressLint("PrivateResource")
     private fun addFragment(fragment: Fragment) {
         childFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)

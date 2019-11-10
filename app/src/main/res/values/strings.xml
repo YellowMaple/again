@@ -4,4 +4,5 @@
     <string name="bottom_dashboard">Dashboard</string>
     <string name="bottom_setting">Notifications</string>
     <string name="bottom_build">New</string>
+    <string name="sports_select">请点击一项运动</string>
 </resources>
