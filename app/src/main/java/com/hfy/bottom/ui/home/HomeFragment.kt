@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
         mBottomBehavior.setInterpolator(BounceInterpolator())
 
 
-        val fragment = IndexFragment()
+        val fragment = BuildFragment()
         addFragment(fragment)
 
         return root
