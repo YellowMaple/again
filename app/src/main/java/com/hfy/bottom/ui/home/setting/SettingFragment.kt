@@ -11,9 +11,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.hfy.bottom.R
 
 
-class CourtFragment : Fragment() {
+class SettingFragment : Fragment() {
 
-    private lateinit var homeViewModel: CourtViewModel
+    private lateinit var homeViewModel: SettingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,7 +21,7 @@ class CourtFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-            ViewModelProviders.of(this).get(CourtViewModel::class.java)
+            ViewModelProviders.of(this).get(SettingViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_court, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(this, Observer {

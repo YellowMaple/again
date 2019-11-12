@@ -1,4 +1,4 @@
-package com.hfy.bottom.ui.home.index
+package com.hfy.bottom.ui.home.build
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,13 +6,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.hfy.bottom.R
 import com.hfy.bottom.databinding.ItemFragmentSportsBinding
-import com.hfy.bottom.domain.Sport
+import com.hfy.bottom.domain.Sports
 
 
-class SportListAdapter(val callBack:SportClick) :
+class SportListAdapter(val callBack: SportClick) :
     RecyclerView.Adapter<SportListAdapter.ViewHolder>() {
 
-    var sportsList: List<Sport> = emptyList()
+    var sportList: List<Sports> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -26,11 +26,11 @@ class SportListAdapter(val callBack:SportClick) :
         )
     }
     override fun getItemCount(): Int {
-        return sportsList.size
+        return sportList.size
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.also {
-            it.sport=sportsList[position]
+            it.sport=sportList[position]
             it.callback=callBack
         }
     }

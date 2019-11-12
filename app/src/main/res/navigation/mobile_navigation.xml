@@ -11,6 +11,10 @@
         android:label="@string/bottom_home"
         tools:layout="@layout/fragment_home" >
         <action
+            android:id="@+id/action_navigation_home_to_sportSettingUpFragment"
+            app:destination="@id/sportSettingUpFragment"
+            />
+        <action
             android:id="@+id/action_navigation_home_to_sportDetailFragment"
             app:destination="@id/sportDetailFragment" />
     </fragment>
@@ -20,6 +24,15 @@
         android:name="com.hfy.bottom.ui.notifications.NotificationsFragment"
         android:label="@string/bottom_setting"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/sportSettingUpFragment"
+        android:name="com.hfy.bottom.ui.home.build.settingup.SportSettingUpFragment"
+        android:label="SportSettingUpFragment" >
+        <argument
+            android:name="sportId"
+            app:argType="com.hfy.bottom.domain.Sports"
+            android:defaultValue="Badminton" />
+    </fragment>
     <fragment
         android:id="@+id/sportDetailFragment"
         android:name="com.hfy.bottom.ui.home.index.detail.SportDetailFragment"

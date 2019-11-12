@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.hfy.bottom.R
 import com.hfy.bottom.ui.home.build.BuildFragment
 import com.hfy.bottom.ui.home.index.IndexFragment
-import com.hfy.bottom.ui.home.setting.CourtFragment
+import com.hfy.bottom.ui.home.setting.SettingFragment
 import com.lauzy.freedom.lbehaviorlib.behavior.CommonBehavior
 
 class HomeFragment : Fragment() {
@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                val fragment = CourtFragment()
+                val fragment = SettingFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }

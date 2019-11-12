@@ -11,7 +11,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.hfy.bottom.R
 import com.hfy.bottom.databinding.FragmentIndexBinding
-import com.hfy.bottom.domain.Sport
+import com.hfy.bottom.domain.Match
+import com.hfy.bottom.ui.home.build.SportListAdapter
 
 
 class IndexFragment : Fragment() {
@@ -24,8 +25,8 @@ class IndexFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentIndexBinding.inflate(inflater, container, false)
-        val adapter = SportListAdapter(SportClick {
-            Toast.makeText(context,"test", Toast.LENGTH_LONG).show()
+        val adapter = MatchListAdapter(MatchClick {
+            Toast.makeText(context, "test", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_navigation_home_to_sportDetailFragment)
         })
         viewModel =ViewModelProviders.of(this).get(IndexViewModel::class.java)
@@ -34,15 +35,14 @@ class IndexFragment : Fragment() {
         subscribeUi(adapter)
         return binding.root
     }
-    private fun subscribeUi(adapter: SportListAdapter) {
+    private fun subscribeUi(adapter: MatchListAdapter) {
         viewModel.sportsLiveData.observe(viewLifecycleOwner, Observer {
-            adapter.sportsList=it
+            adapter.matchList=it
         })
     }
-
-
 }
 
-class SportClick(val block: (Sport) -> Unit) {
-    fun onClick(video: Sport) = block(video)
+class MatchClick(val block: (Match) -> Unit) {
+    fun onClick(match: Match) = block(match)
 }
+

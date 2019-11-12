@@ -5,10 +5,10 @@
       <data>
             <variable
                 name="callback"
-                type="com.hfy.bottom.ui.home.build.SportClick" />
+                type="com.hfy.bottom.ui.home.index.MatchClick" />
             <variable
-                name="sport"
-                type="com.hfy.bottom.domain.Sports" />
+                name="match"
+                type="com.hfy.bottom.domain.Match" />
       </data>
       <TextView
           android:id="@+id/sportItem"
@@ -16,8 +16,8 @@
           android:layout_height="30sp"
           android:layout_marginStart="4dp"
           android:layout_marginTop="16dp"
-          android:onClick="@{() -> callback.onClick(sport)}"
-          android:text="@{sport.type}"
+          android:onClick="@{() -> callback.onClick(match)}"
+          android:text="@{match.type}"
           android:textAlignment="center"
           android:textAllCaps="false"
           android:textColor="@color/text_black"

@@ -1,13 +1,15 @@
-package com.hfy.bottom.ui.home.setting
+package com.hfy.bottom.ui.home.build.settingup
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.hfy.bottom.domain.Sports
 
-class SettingViewModel : ViewModel() {
+
+class SportSettingUpViewModel (private val sport:Sports): ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home setting Fragment"
+        value = sport.type
     }
     val text: LiveData<String> = _text
 }
