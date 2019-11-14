@@ -23,12 +23,12 @@ class HomeFragment : Fragment() {
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_build -> {
                 val fragment = BuildFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
+            R.id.navigation_setting -> {
                 val fragment = SettingFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
@@ -56,6 +56,7 @@ class HomeFragment : Fragment() {
 
         val fragment = BuildFragment()
         addFragment(fragment)
+        bottomView.selectedItemId=R.id.navigation_build//确保启动切换到该页
 
         return root
     }

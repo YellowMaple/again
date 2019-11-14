@@ -7,12 +7,12 @@
         android:title="@string/bottom_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_build"
         android:icon="@drawable/ic_action_add"
         android:title="@string/bottom_build" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_setting"
         android:icon="@drawable/ic_action_name"
         android:title="@string/bottom_setting" />
 

@@ -4,18 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
-import com.hfy.bottom.R
+import com.hfy.bottom.databinding.FragmentSportSettingUpBinding
+import com.hfy.bottom.extentions.logd
+import com.hfy.bottom.extentions.toast
+
 
 
 class SportSettingUpFragment : Fragment() {
 
     private val args: SportSettingUpFragmentArgs by navArgs()
     private lateinit var viewModel: SportSettingUpViewModel
+    private lateinit var binding:FragmentSportSettingUpBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,13 +24,13 @@ class SportSettingUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel =SportSettingUpViewModel(args.sportId)
-//            ViewModelProviders.of(this).get(SportSettingUpViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_sport_setting_up, container, false)
-        val textView: TextView = root.findViewById(R.id.text_sport_setting_up)
-
-        viewModel.text.observe(this, Observer {
-            textView.text = it
-        })
-        return root
+        binding= FragmentSportSettingUpBinding.inflate(inflater, container, false)
+        binding.toast.setOnClickListener{
+                context?.toast("this is toast")
+        }
+        binding.alert.setOnClickListener{
+            context?.logd("this is timber log")
+        }
+        return binding.root
     }
 }
